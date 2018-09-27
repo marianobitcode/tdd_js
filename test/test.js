@@ -9,6 +9,7 @@ let Phrase = require("../index.js");  // the Phrase object itself:
 
 describe("Phrase", function() {                       // The object
   describe("#palindrome", function() {                // Testing out one method of the object.
+
     it("should return false for a non-palindrome", function() {
       let nonPalindrome = new Phrase("apple");
       assert(!nonPalindrome.palindrome());            // we’ve used assert to assert that "apple" should not be a palindrome
@@ -27,6 +28,11 @@ describe("Phrase", function() {                       // The object
     it("should return true for a palindrome with punctuation", function() {
       let punctuatedPalindrome = new Phrase("Madam, I'm Adam.");
       assert(punctuatedPalindrome.palindrome());
+    });
+
+    it("should return false for an empty string", function() {
+      let emptyPhrase = new Phrase('');
+      assert(!emptyPhrase.palindrome());
     });
 
     // Adding a Pending Test: you accomplish it only writting the following
